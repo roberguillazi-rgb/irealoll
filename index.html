@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía informativa profesional sobre el turismo en Ibagué, Tolima. Descubra rutas naturales, patrimonio cultural y gastronomía local.">
+    <title>Guía Ibagué | Patrimonio y Naturaleza</title>
+    
+    <style>
+        /* --- VARIABLES DE DISEÑO SOBRIO --- */
+        :root {
+            --primary: #354f38;      /* Verde Bosque Oscuro (Profesional) */
+            --secondary: #596e5c;    /* Verde Grisáceo */
+            --text-dark: #2c2c2c;    /* Casi negro para lectura */
+            --text-light: #f9f9f9;   /* Blanco humo */
+            --bg-light: #ffffff;
+            --bg-section: #f4f5f7;   /* Gris muy claro para contraste */
+            --border: #dcdcdc;
+            --accent: #8c7b50;       /* Dorado mate/Bronce para detalles */
+        }
+
+        /* --- RESET Y TIPOGRAFÍA --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        header {
+            background-color: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* --- SECCIÓN DE FILTROS --- */
+        .controls {
+            padding: 40px 0 20px;
+            text-align: center;
+            background-color: var(--bg-section);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .control-btn {
+            background: transparent;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .control-btn.active, .control-btn:hover {
+            background: var(--primary);
+            color: var(--text-light);
+            border-color: var(--primary);
+        }
+
+        /* --- GRID DE CONTENIDO (RECUADROS) --- */
+        .content-section {
+            padding: 50px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .card-header {
+            background-color: #f0f0f0;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .category-tag {
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* --- SECCIÓN INFORMATIVA DETALLADA --- */
+        .info-panel {
+            background-color: var(--bg-section);
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .panel-text h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .data-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .data-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-label { font-weight: 600; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 50px 0 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .disclaimer {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* --- RESPONSIVIDAD --- */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Menú móvil omitido para limpieza */
+            .panel-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Guía Ibagué</div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#explorar">Explorar</a></li>
+                    <li><a href="#datos">Datos Prácticos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Capital Musical de Colombia</h1>
+            <p>Un recorrido técnico e histórico por los principales puntos de interés turístico, cultural y ecológico de la ciudad de Ibagué.</p>
+        </div>
+    </section>
+
+    <div class="controls">
+        <div class="container">
+            <button class="control-btn active" onclick="filterContent('todos')">Ver Todo</button>
+            <button class="control-btn" onclick="filterContent('naturaleza')">Naturaleza</button>
+            <button class="control-btn" onclick="filterContent('cultura')">Cultura e Historia</button>
+            <button class="control-btn" onclick="filterContent('gastronomia')">Gastronomía</button>
+        </div>
+    </div>
+
+    <section id="explorar" class="content-section">
+        <div class="container">
+            <div class="grid" id="tourist-grid">
+                
+                <article class="card naturaleza">
+                    <div class="card-header">Imagen: Cañón del Combeima</div>
+                    <div class="card-body">
+                        <span class="category-tag">Naturaleza / Ecoturismo</span>
+                        <h3>Cañón del Combeima</h3>
+                        <p>Puerta de entrada al Parque Nacional Natural Los Nevados. Destaca por sus miradores, cascadas y oferta de senderismo de media montaña.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Zona Rural</span>
+                        <span>Acceso: Libre</span>
+                    </div>
+                </article>
+
+                <article class="card cultura">
+                    <div class="card-header">Imagen: Complejo Cultural Panóptico</div>
+                    <div class="card-body">
+                        <span class="category-tag">Cultura / Museo</span>
+                        <h3>Complejo Cultural Panóptico</h3>
+                        <p>Antiguo centro penitenciario restaurado, hoy convertido en el principal museo de la región que narra la historia del departamento del Tolima.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Centro</span>
+                        <span>Entrada: Gratuita</span>
+                    </div>
+                </article>
+
+                <article class="card naturaleza">
+                    <div class="card-header">Imagen: Jardín Botánico</div>
+                    <div class="card-body">
+                        <span class="category-tag">Naturaleza / Conservación</span>
+                        <h3>Jardín Botánico San Jorge</h3>
+                        <p>Reserva natural urbana con más de 60 hectáreas de bosque subandino. Ideal para avistamiento de aves y educación ambiental.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Av. Guabinal</span>
+                        <span>Requiere Reserva</span>
+                    </div>
+                </article>
+
+                <article class="card cultura">
+                    <div class="card-header">Imagen: Conservatorio del Tolima</div>
+                    <div class="card-body">
+                        <span class="category-tag">Cultura / Música</span>
+                        <h3>Conservatorio del Tolima</h3>
+                        <p>Edificio de arquitectura republicana, alma de la identidad musical de la ciudad. Sede de la Sala Alberto Castilla.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Centro Histórico</span>
+                        <span>Evento: Conciertos</span>
+                    </div>
+                </article>
+
+                <article class="card gastronomia">
+                    <div class="card-header">Imagen: Plaza de La 28</div>
+                    <div class="card-body">
+                        <span class="category-tag">Gastronomía / Tradición</span>
+                        <h3>Plaza de Mercado La 28</h3>
+                        <p>Centro gastronómico tradicional donde se puede degustar el tamal tolimense y la lechona auténtica en un entorno popular y seguro.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Carrera 5ta</span>
+                        <span>Costo: Accesible</span>
+                    </div>
+                </article>
+
+                <article class="card cultura">
+                    <div class="card-header">Imagen: Plaza de Bolívar</div>
+                    <div class="card-body">
+                        <span class="category-tag">Historia / Espacio Público</span>
+                        <h3>Plaza de Bolívar</h3>
+                        <p>El corazón administrativo de la ciudad, rodeado por la Catedral, el Palacio de Justicia y árboles centenarios.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>Ubicación: Centro</span>
+                        <span>Acceso: Libre</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="datos" class="info-panel">
+        <div class="container">
+            <div class="panel-grid">
+                <div class="panel-text">
+                    <h2>Información Práctica para el Visitante</h2>
+                    <p>Ibagué se encuentra ubicada en el centro-occidente de Colombia, sobre la Cordillera Central de los Andes. Su ubicación estratégica la convierte en un corredor logístico y turístico vital.</p>
+                    <p style="margin-top: 15px;">La ciudad cuenta con una infraestructura hotelera en crecimiento y es conocida por su clima variado, que oscila entre zonas cálidas en el valle y zonas frías hacia el nevado.</p>
+                </div>
+                <div class="panel-data">
+                    <ul class="data-list">
+                        <li>
+                            <span class="data-label">Altitud Promedio</span>
+                            <span>1.285 m.s.n.m.</span>
+                        </li>
+                        <li>
+                            <span class="data-label">Temperatura Media</span>
+                            <span>21°C - 28°C</span>
+                        </li>
+                        <li>
+                            <span class="data-label">Aeropuerto</span>
+                            <span>Perales (IBE)</span>
+                        </li>
+                        <li>
+                            <span class="data-label">Fundación</span>
+                            <span>14 de Octubre de 1550</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Sobre Guía Ibagué</h4>
+                    <p>Blog independiente dedicado a la promoción responsable del turismo y la cultura en la región del Tolima.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#">Rutas Ecológicas</a></li>
+                        <li><a href="#">Agenda Cultural</a></li>
+                        <li><a href="#">Hotelería</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Contacto Editorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>&copy; 2026 Guía Ibagué. Todos los derechos reservados.</p>
+                <p style="margin-top: 5px; opacity: 0.7;">Este sitio web es meramente informativo y no representa a ninguna entidad gubernamental.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad de filtrado sin recarga (UX optimizada)
+        function filterContent(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('.control-btn');
+
+            // Actualizar estado visual de los botones
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(category) || 
+                   (category === 'todos' && btn.textContent === 'Ver Todo')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Lógica de visualización de tarjetas
+            cards.forEach(card => {
+                // Resetear animación
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    if (category === 'todos' || card.classList.contains(category)) {
+                        card.style.display = 'block';
+                        // Pequeño delay para permitir que el display:block se renderice antes de la opacidad
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 200); // Esperar a que termine la animación de salida
+            });
+        }
+    </script>
+</body>
+</html>
