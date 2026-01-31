@@ -1,209 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AireColom es un blog informativo sobre los idiomas en todo el mundo, explorando la diversidad lingüística con amor y pasión por las culturas del planeta.">
-    <meta name="keywords" content="idiomas, culturas, lingüística, diversidad lingüística, AireColom">
-    <title>AireColom - Idiomas del Mundo</title>
-    <style>
-        /* Reset global */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #2d2d2d;
-        }
-        p {
-            color: #555;
-        }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* Header */
-        header {
-            background-color: #0044cc;
-            padding: 20px 0;
-            text-align: center;
-            color: #fff;
-        }
-        header h1 {
-            font-size: 2.5rem;
-        }
+  <title>AireColom | Blog informativo sobre los idiomas del mundo</title>
 
-        /* Main content */
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
+  <!-- SEO básico y Google Ads friendly -->
+  <meta name="description" content="AireColom es un blog informativo dedicado a los idiomas del mundo, la diversidad lingüística y el amor por las culturas que nos conectan como humanidad.">
+  <meta name="keywords" content="idiomas, lenguas del mundo, diversidad lingüística, blog informativo, AireColom">
+  <meta name="robots" content="index, follow">
 
-        /* Sections */
-        section {
-            margin: 40px 0;
-        }
+  <style>
+    :root {
+      --color-primario: #1f3a5f;
+      --color-secundario: #4a90a4;
+      --color-fondo: #f5f7fa;
+      --color-texto: #2b2b2b;
+      --color-gris: #6b7280;
+      --color-blanco: #ffffff;
+    }
 
-        .intro img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .article-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-        }
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.7;
+    }
 
-        .article-item {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .article-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
 
-        .article-item p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
+    a {
+      text-decoration: none;
+      color: var(--color-primario);
+    }
 
-        .article-item a {
-            font-size: 1rem;
-            font-weight: bold;
-        }
+    header {
+      background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+      color: var(--color-blanco);
+      padding: 40px 20px;
+    }
 
-        .article-item:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+    .header-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .article-list {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        @media screen and (max-width: 480px) {
-            .article-list {
-                grid-template-columns: 1fr;
-            }
+    nav a {
+      color: var(--color-blanco);
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
 
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        footer p {
-            font-size: 1rem;
-        }
-
-        /* Scroll to top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0044cc;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Header -->
-    <header>
-        <h1>AireColom - Idiomas del Mundo</h1>
-        <p>Explorando la diversidad lingüística con amor</p>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-
-        <!-- Introduction Section -->
-        <section class="intro">
-            <img src="https://via.placeholder.com/1200x500?text=Idiomas+del+Mundo" alt="Idiomas del Mundo">
-            <h2>Bienvenidos a AireColom</h2>
-            <p>En AireColom, nos apasiona explorar los idiomas que conforman la rica y diversa tapeicería lingüística del mundo. Acompáñanos mientras descubrimos cómo cada lengua refleja las culturas y tradiciones que la sostienen.</p>
-        </section>
-
-        <!-- Articles Section -->
-        <section>
-            <h2>Artículos Recientes</h2>
-            <div class="article-list">
-                <div class="article-item">
-                    <h3>El Futuro de los Idiomas en Peligro de Extinción</h3>
-                    <p>Exploramos los esfuerzos para preservar los idiomas en peligro de extinción y cómo la tecnología puede ser una aliada en este desafío global.</p>
-                    <a href="#">Leer más</a>
-                </div>
-                <div class="article-item">
-                    <h3>Idiomas que Unen: La Importancia de los Idiomas Universales</h3>
-                    <p>Una reflexión sobre los idiomas internacionales como el inglés, el español y el francés, y su papel en la globalización y el entendimiento entre culturas.</p>
-                    <a href="#">Leer más</a>
-                </div>
-                <div class="article-item">
-                    <h3>Las Lenguas de los Pueblos Originarios</h3>
-                    <p>Un viaje a través de las lenguas habladas por pueblos originarios alrededor del mundo, y su influencia en el patrimonio cultural global.</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section>
-            <h2>Sobre AireColom</h2>
-            <p>AireColom nació con el propósito de educar, informar y compartir el amor por los idiomas. Nuestra misión es ofrecer contenido único y reflexivo sobre cómo los idiomas enriquecen nuestra comprensión del mundo, ayudándonos a conectarnos más allá de las fronteras lingüísticas.</p>
-        </section>
-        
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 AireColom. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
-
-    <!-- JavaScript -->
-    <script>
-        // Show Scroll to Top button when scrolling down
-        window.onscroll = function() {
-            const scrollButton = document.querySelector('.scroll-to-top');
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollButton.style.display = 'block';
-            } else {
-                scrollButton.style.display = 'none';
-            }
-        };
-
-        // Function to scroll to the top
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
+    nav a:hover {
+      o
