@@ -72,4 +72,246 @@
     }
 
     nav a:hover {
-      o
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--color-gris);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--color-blanco);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      color: var(--color-gris);
+      font-size: 0.95rem;
+    }
+
+    .about {
+      background-color: var(--color-blanco);
+      padding: 60px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .legal {
+      background-color: #eef2f7;
+      padding: 50px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .legal h3 {
+      font-size: 1.4rem;
+    }
+
+    footer {
+      background-color: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--color-primario);
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .articles {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about, .legal {
+        padding: 40px 25px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <h2>AireColom</h2>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#articulos">Artículos</a>
+      <a href="#nosotros">Sobre el blog</a>
+      <a href="#legal">Políticas</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div>
+      <h1>Los idiomas del mundo contados con respeto y profundidad</h1>
+      <p>
+        AireColom es un blog informativo dedicado a explorar la diversidad lingüística del planeta.
+        Cada idioma es una forma de ver el mundo, una historia viva que merece ser comprendida y valorada.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="Diversidad de idiomas en el mundo">
+  </section>
+
+  <section id="articulos">
+    <h2 class="section-title">Lecturas destacadas</h2>
+    <div class="articles">
+      <article class="card">
+        <h3>Lenguas en peligro de extinción</h3>
+        <p>
+          Analizamos por qué miles de idiomas están desapareciendo y qué impacto tiene esto en la identidad cultural de los pueblos.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Idiomas más hablados del planeta</h3>
+        <p>
+          Un recorrido informativo por las lenguas con mayor número de hablantes y su influencia histórica y social.
+        </p>
+      </article>
+      <article class="card">
+        <h3>El amor por aprender idiomas</h3>
+        <p>
+          Aprender una nueva lengua no es solo comunicación, es empatía, comprensión y conexión humana.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="nosotros" class="about">
+    <h2 class="section-title">Sobre AireColom</h2>
+    <p>
+      AireColom nace como un espacio informativo, educativo y cultural. No ofrecemos servicios ni productos.
+      Nuestro objetivo es divulgar conocimiento sobre los idiomas del mundo de manera clara, responsable y accesible,
+      promoviendo el respeto por la diversidad lingüística y cultural.
+    </p>
+  </section>
+
+  <section id="legal" class="legal">
+    <div>
+      <h3>Política de Privacidad</h3>
+      <p>
+        AireColom no recopila información personal identificable de forma directa.
+        Cualquier dato recopilado mediante cookies o herramientas de análisis se utiliza únicamente con fines estadísticos
+        y de mejora de la experiencia del usuario.
+      </p>
+    </div>
+
+    <div>
+      <h3>Política de Cookies</h3>
+      <p>
+        Este sitio puede utilizar cookies para analizar el tráfico y mejorar el contenido.
+        El usuario puede configurar su navegador para rechazar o eliminar las cookies en cualquier momento.
+      </p>
+    </div>
+
+    <div>
+      <h3>Términos y Condiciones</h3>
+      <p>
+        El contenido publicado en AireColom es exclusivamente informativo.
+        No garantizamos exactitud absoluta y no asumimos responsabilidad por el uso que se haga de la información.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AireColom · Blog informativo sobre los idiomas del mundo</p>
+</footer>
+
+<button class="scroll-top" id="scrollTopBtn">↑</button>
+
+<script>
+  const btn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
